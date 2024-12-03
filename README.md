@@ -15,7 +15,7 @@ Human myocardial infarction: [data](https://cellxgene.cziscience.com/collections
 Human fetal atlas: [GSE156793](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE156793), [GSE149683](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE149683)
 
 
-### How to run our codes?
+### How to run？
 
 1. First, run graph_build/main_graph.R
 
