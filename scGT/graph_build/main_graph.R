@@ -1,5 +1,11 @@
 # nohup Rscript 图链接生成.R>32w_graph_make.log 2>&1 &   # 后台运行
 
+# note that
+# count.list list of reference (scRNA-seq) data and query (scATAC-seq) data; rows are genes and columns are cells. And they have the same genes.
+# label.list list of reference label and query label, both are data frames with rownames identical with colnames of data; the first column is cell type
+
+
+
 library(future)
 source("data_preprocess_utility_PCA.R")
 source("filter_PCA.R")
