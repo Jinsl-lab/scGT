@@ -8,7 +8,7 @@ Human PBMC: [data](https://github.com/SydneyBioX/scJoint/blob/main/data.zip), [F
 
 Mouse colon: [GSE207308](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE207308)
 
-Mouse brain cortex: [GSE126074](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE126074), SRP18352118
+Mouse brain cortex: [GSE126074](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE126074), [SRP183521](https://www.ncbi.nlm.nih.gov/sra?term=SRP183521)
 
 Human myocardial infarction: [data](https://cellxgene.cziscience.com/collections/8191c283-0816-424b-9b61-c3e1d6258a77), peak-by-cell matrix([part1](https://zenodo.org/records/6578553), [part2](https://zenodo.org/record/6578617))
 
