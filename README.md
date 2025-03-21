@@ -17,6 +17,6 @@ Human fetal atlas: [GSE156793](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?ac
 
 ### How to run？
 
-1. First, run graph_build/main_graph.R
+1. First, run scGT/graph_build/main_graph.R
 
-2. Then, you can run scGT in batch_main.ipynb or main.ipynb
+2. Then, you can run scGT in batch_main.ipynb
