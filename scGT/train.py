@@ -26,6 +26,10 @@ def model_train(args, dataset, model, split_idx, device, x, n, adjs, adj_loss_in
         model.to(device)
         model.train()
 
+        if (args.num_batch > 1):
+            random_seed = random.randint(0, 10000)
+            torch.manual_seed(random_seed)
+        
         num_batch1 = rna_idx.size(0) // args.num_batch
         num_batch2 = atac_idx.size(0) // args.num_batch
         num_batch3 = train_atac_idx.size(0) // args.num_batch
