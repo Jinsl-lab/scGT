@@ -26,10 +26,6 @@ def model_train(args, dataset, model, split_idx, device, x, n, adjs, adj_loss_in
         model.to(device)
         model.train()
 
-        if (args.num_batch > 1):
-            random_seed = random.randint(0, 10000)
-            torch.manual_seed(random_seed)
-        
         num_batch1 = rna_idx.size(0) // args.num_batch
         num_batch2 = atac_idx.size(0) // args.num_batch
         num_batch3 = train_atac_idx.size(0) // args.num_batch
@@ -40,6 +36,9 @@ def model_train(args, dataset, model, split_idx, device, x, n, adjs, adj_loss_in
     
         label_train = label_train.to(device)    
         L = 0
+        L1all = 0
+        L2all = 0
+        L3all = 0
         
         for i in range(args.num_batch):
             idx_i_rna = rna_idx[idx1[i*num_batch1:(i+1)*num_batch1]]
@@ -63,6 +62,10 @@ def model_train(args, dataset, model, split_idx, device, x, n, adjs, adj_loss_in
         
             loss = loss1 + loss2 + loss3
             L += loss
+            L1all += loss1
+            L2all += loss2
+            L3all += loss3
+
             loss.backward()
             optimizer.step()
             # scheduler.step()
@@ -71,10 +74,10 @@ def model_train(args, dataset, model, split_idx, device, x, n, adjs, adj_loss_in
             result = evaluate_cpu(model, dataset, split_idx, eval_func, criterion, args)
 
             print(f'Epoch: {epoch:02d}, '
-                  f'Loss: {loss:.4f}, '
-                  f'Cross Entropy Loss: {loss1:.4f}, '
-                  f'Hard regularity: {loss2:.4f}, '
-                  f'Query Graph regularity: {loss3:.4f}, '
+                  f'Loss: {L/args.num_batch:.4f}, '
+                  f'Cross Entropy Loss: {L1all/args.num_batch:.4f}, '
+                  f'Hard regularity: {L2all/args.num_batch:.4f}, '
+                  f'Query Graph regularity: {L3all/args.num_batch:.4f}, '
                   f'Reference: {100 * result:.2f}% ')
             if epoch % 50 == 0 and args.is_move:
                 model.eval() 
