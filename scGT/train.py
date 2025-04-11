@@ -84,8 +84,8 @@ def model_train(args, dataset, model, split_idx, device, x, n, adjs, adj_loss_in
                 model.to(torch.device("cpu"))
                 atac_idx, train_atac_idx, label_train, p = move_query_to_reference(model, x, adjs, atac_idx, train_atac_idx, label_train, device)
                 
-        if l > L/3:
-            l = L/3
+        if l > L/args.num_batch:
+            l = L/args.num_batch
             num = 0
             model.eval() 
             model.to(torch.device("cpu"))
