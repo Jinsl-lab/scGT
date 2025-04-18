@@ -18,9 +18,9 @@ save_processed_data(count, label, dir = "../../data/human40k/input", K_inter = 3
 # dim: The number of principal components when constructing the intra-datasets graph connections.
 ###
 
-fix_index("input")
+fix_index("../../data/human40k/input")
 
-acc_intra_graph1("input") # Accuracy of the intra-datasets graph connections in reference data.
+acc_intra_graph1("../../data/human40k/input") # Accuracy of the intra-datasets graph connections in reference data.
 
-filter4_weight("input") # filter
+filter4_weight("../../data/human40k/input") # filter
 
