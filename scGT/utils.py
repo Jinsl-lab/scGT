@@ -14,7 +14,6 @@ def read_data(args, dataset):
     if len(dataset.label.shape) == 1:
         dataset.label = dataset.label.unsqueeze(1)
     
-    # 数据处理
     split_idx = dataset.get_idx_split()
     n = dataset.graph['num_nodes']
     # infer the number of classes for non one-hot and one-hot labels
