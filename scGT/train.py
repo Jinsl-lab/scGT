@@ -5,6 +5,7 @@ import dataset
 from eval import evaluate_cpu, eval_acc
 from utils import hard_loss, query_graph_loss, save_model, move_query_to_reference, sub_graph
 import matplotlib.pyplot as plt
+import random
 
 def model_train(args, dataset, model, split_idx, device, x, n, adjs, adj_loss_inter, adj_loss_intra2):
     l = float('inf') 
