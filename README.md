@@ -2,7 +2,7 @@
 
 This work proposes scGT, based on Graph Transformer for the integration of scRNA-seq and scATAC-seq data. A robust hybrid graph construction method is included inside.
 
-### Datasets
+### Datasets (10.5281/zenodo.15657341)
 
 Human PBMC: [data](https://github.com/SydneyBioX/scJoint/blob/main/data.zip), [Fragment files](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE156478)
 
